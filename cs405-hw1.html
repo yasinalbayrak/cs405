@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bar-chart {
+            border: 1px #7D7C7C solid;
+            width: 1450px;
+            height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <svg height="350" xmlns="http://www.w3.org/2000/svg" id="bar-chart">
+
+        <!-- Gridlines -->
+        <line x1="80" y1="500" x2="1430" y2="500" stroke="lightgray" stroke-width="1" />
+        <line x1="80" y1="450" x2="1430" y2="450" stroke="lightgray" stroke-width="1" />
+        <line x1="80" y1="400" x2="1430" y2="400" stroke="lightgray" stroke-width="1" />
+        <line x1="80" y1="350" x2="1430" y2="350" stroke="lightgray" stroke-width="1" />
+        <line x1="80" y1="300" x2="1430" y2="300" stroke="lightgray" stroke-width="1" />
+        <line x1="80" y1="250" x2="1430" y2="250" stroke="lightgray" stroke-width="1" />
+        <line x1="80" y1="200" x2="1430" y2="200" stroke="lightgray" stroke-width="1" />
+        <line x1="80" y1="150" x2="1430" y2="150" stroke="lightgray" stroke-width="1" />
+
+        <!-- Horizontal labels -->
+        <text x="15" y="455" fill="gray">50 000</text>
+        <text x="15" y="405" fill="gray">100 000</text>
+        <text x="15" y="355" fill="gray">150 000</text>
+        <text x="15" y="305" fill="gray">200 000</text>
+        <text x="15" y="255" fill="gray">250 000</text>
+        <text x="15" y="205" fill="gray">300 000</text>
+        <text x="15" y="155" fill="gray">350 000</text>
+
+        <!-- Male Deaths-->
+        <rect x="90" y="296.347" width="15" height="203.653" fill="#3085C3" />
+        <rect x="190" y="299.555" width="15" height="200.445" fill="#3085C3" />
+        <rect x="290" y="293.495" width="15" height="206.505" fill="#3085C3" />
+        <rect x="390" y="292.366" width="15" height="207.634" fill="#3085C3" />
+        <rect x="490" y="294.561" width="15" height="205.439" fill="#3085C3" />
+        <rect x="590" y="286.318" width="15" height="213.682" fill="#3085C3" />
+        <rect x="690" y="277.971" width="15" height="222.029" fill="#3085C3" />
+        <rect x="790" y="268.411" width="15" height="231.589" fill="#3085C3" />
+        <rect x="890" y="266.339" width="15" height="233.661" fill="#3085C3" />
+        <rect x="990" y="266.862" width="15" height="233.138" fill="#3085C3" />
+        <rect x="1090" y="261.633" width="15" height="238.367" fill="#3085C3" />
+        <rect x="1190" y="214.084" width="15" height="285.160" fill="#3085C3" />
+        <rect x="1290" y="190.678" width="15" height="309.322" fill="#3085C3" />
+        <rect x="1390" y="224.469" width="15" height="275.531" fill="#3085C3" />
+
+        <!-- Female Deaths-->
+        <rect x="110" y="333.95" width="15" height="166.050" fill="#F45050" />
+        <rect x="210" y="333.974" width="15" height="166.026" fill="#F45050" />
+        <rect x="310" y="330.343" width="15" height="169.657" fill="#F45050" />
+        <rect x="410" y="331.114" width="15" height="168.886" fill="#F45050" />
+        <rect x="510" y="332.398" width="15" height="167.602" fill="#F45050" />
+        <rect x="610" y="322.591" width="15" height="177.409" fill="#F45050" />
+        <rect x="710" y="316.501" width="15" height="183.499" fill="#F45050" />
+        <rect x="810" y="308.625" width="15" height="191.375" fill="#F45050" />
+        <rect x="910" y="306.804" width="15" height="193.196" fill="#F45050" />
+        <rect x="1010" y="306.353" width="15" height="193.647" fill="#F45050" />
+        <rect x="1110" y="301.743" width="15" height="198.257" fill="#F45050" />
+        <rect x="1210" y="276.112" width="15" height="223.888" fill="#F45050" />
+        <rect x="1310" y="242.837" width="15" height="257.163" fill="#F45050" />
+        <rect x="1410" y="270.692" width="15" height="229.308" fill="#F45050" />
+
+        <!-- Add labels for the bars -->
+        <text x="90" y="520" fill="gray">2009</text>
+        <text x="190" y="520" fill="gray">2010</text>
+        <text x="290" y="520" fill="gray">2011</text>
+        <text x="390" y="520" fill="gray">2012</text>
+        <text x="490" y="520" fill="gray">2013</text>
+        <text x="590" y="520" fill="gray">2014</text>
+        <text x="690" y="520" fill="gray">2015</text>
+        <text x="790" y="520" fill="gray">2016</text>
+        <text x="890" y="520" fill="gray">2017</text>
+        <text x="990" y="520" fill="gray">2018</text>
+        <text x="1090" y="520" fill="gray">2019</text>
+        <text x="1190" y="520" fill="gray">2020</text>
+        <text x="1290" y="520" fill="gray">2021</text>
+        <text x="1390" y="520" fill="gray">2022</text>
+
+
+        <!-- Title -->
+        <text x="600" y="100" fill="#7D7C7C" font-family="Arial" font-size="20">Deaths By Sex, 2009-2022</text>
+
+        <!-- Legend -->
+        <rect x="650" y="568" width="7" height="7" fill="#3085C3" />
+        <text x="660" y="575" fill="black" font-family="Arial" font-size="12">Male</text>
+        <rect x="695" y="568" width="7" height="7" fill="#F45050" />
+        <text x="705" y="575" fill="black" font-family="Arial" font-size="12">Female</text>
+
+    </svg>
+
+</body>
+
+</html>
