@@ -172,11 +172,12 @@ function getModelViewMatrix() {
     // start with identity matrix
     var transformationMatrix = createIdentityMatrix();
     
+    transformationMatrix = multiplyMatrices(transformationMatrix, translationMatrix);
     transformationMatrix = multiplyMatrices(transformationMatrix, scalingMatrix);
     transformationMatrix = multiplyMatrices(transformationMatrix, rotationXMatrix);
     transformationMatrix = multiplyMatrices(transformationMatrix, rotationYMatrix);
     transformationMatrix = multiplyMatrices(transformationMatrix, rotationZMatrix);
-    transformationMatrix = multiplyMatrices(transformationMatrix, translationMatrix);
+    
 
     console.log(transformationMatrix);
     return transformationMatrix;
