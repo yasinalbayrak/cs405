@@ -102,8 +102,7 @@ class MeshDrawer {
 		gl.bindBuffer(gl.ARRAY_BUFFER, this.normBuffer);
 		gl.enableVertexAttribArray(this.normLoc);
 		gl.vertexAttribPointer(this.normLoc, 3, gl.FLOAT, false, 0, 0);
-		this.lightPos = [lightX, lightY, 1];
-		gl.uniform3fv(this.lightPostLoc, this.lightPos);
+		gl.uniform3fv(this.lightPostLoc, normalize([lightX, lightY, 1]));
 		///////////////////////////////
 
 
@@ -217,13 +216,13 @@ const meshFS = `
 			void main()
 			{
 				if(showTex && enableLighting){
-					vec3 norm = normalize(v_normal);
-					vec3 lightDir = normalize(lightPos - vec3(gl_FragCoord.xy, 0.0));
-					float diffuseFactor = max(dot(norm, lightDir), 0.0);
-					vec3 lgAmb = ambient * texture2D(tex, v_texCoord).rgb;
-					vec3 lgDfs = diffuseFactor * texture2D(tex, v_texCoord).rgb;
-					vec3 lgAll = lgAmb + lgDfs;
-					gl_FragColor = vec4(lgAll, 1.0);
+					vec3 normal = normalize(v_normal);
+					float difFactor = max(dot(normal, -lightPos), 0.0);
+
+					vec3 ambLight = ambient * texture2D(tex, v_texCoord).rgb;
+					vec3 diffLigt = difFactor * texture2D(tex, v_texCoord).rgb;
+					vec3 allLg = ambLight + diffLigt;
+					gl_FragColor = vec4(allLg, 1.0);
 				}
 				else if(showTex){
 					gl_FragColor = texture2D(tex, v_texCoord);
